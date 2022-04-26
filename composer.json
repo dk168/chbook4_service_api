@@ -1,0 +1,25 @@
+{
+    "name": "chbook4/service_api",
+    "description": "A base server library for chbook4.",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2"
+    },
+    "authors": [
+        {
+            "name": "dengkui",
+            "email": "dengkui0620@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Chbook4\\ServiceApi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Chbook4\\ServiceApi\\": "tests/"
+        }
+    }
+}
