@@ -7,7 +7,7 @@
  * Features:
  */
 
-namespace App\JsonRpc;
+namespace Chbook4\ServiceApi;
 
 
 interface JdClientServiceInterface {
