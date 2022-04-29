@@ -6,8 +6,11 @@
         "php": ">=7.2",
         "hyperf/json-rpc": "~2.2.0",
         "hyperf/rpc-client": "~2.2.0",
+        "hyperf/config-center": "^2.2",
+        "hyperf/config-nacos": "^2.2",
         "hyperf/service-governance-nacos": "v2.2.31.1",
-        "hyperf/service-governance": "~2.2.0"
+        "hyperf/service-governance": "~2.2.0",
+        "hyperf/rpc-multiplex": "^2.2"
     },
     "authors": [
         {
