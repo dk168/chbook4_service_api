@@ -10,6 +10,9 @@ declare(strict_types=1);
  */
 namespace Chbook4\ServiceApi;
 
+/**
+ * 盘点
+ */
 interface StocktakingRpcServiceInterface
 {
     /**

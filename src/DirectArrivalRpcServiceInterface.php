@@ -10,6 +10,9 @@ declare(strict_types=1);
  */
 namespace Chbook4\ServiceApi;
 
+/**
+ * 直接到货/预定到货//退货管理
+ */
 interface DirectArrivalRpcServiceInterface
 {
     /**
@@ -278,6 +281,17 @@ interface DirectArrivalRpcServiceInterface
     public function replyHandAmount(int $dh_id, array $dh_info = []): array;
 
     /**
+     * 预定到货-获取征订商品列表
+     *
+     * @param int $id
+     * @param int $page
+     * @param int $pageSize
+     *
+     * @return array
+     */
+    public function getZdDetail(int $id, int $page = 1, int $pageSize = 50): array;
+
+    /**
      * 进货退货-获取进货购买记录
      *
      * @param array $params
@@ -344,5 +358,4 @@ interface DirectArrivalRpcServiceInterface
      * @return array
      */
     public function getPackageInfo(int $dh_id, array $package_nos = [], int $type = 1): array;
-
 }
