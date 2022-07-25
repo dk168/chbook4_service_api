@@ -185,4 +185,14 @@ interface PurchaseRpcServiceInterface
      * @return bool
      */
     public function checkYhDone(int $id): bool;
+
+    /**
+     * 修改优先级别
+     *
+     * @param string $ids
+     * @param int    $priority_level
+     *
+     * @return array
+     */
+    public function editPriorityLevel(string $ids, int $priority_level): array;
 }
