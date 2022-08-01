@@ -289,12 +289,4 @@ interface SaleRpcServiceInterface
      */
     public function setWarehousingByG(string $h_ids, int $type = 2): array;
 
-    /**
-     * 检查销售单是否完成
-     *
-     * @param int $id
-     *
-     * @return bool
-     */
-    public function checkSdDone(int $id): bool;
 }

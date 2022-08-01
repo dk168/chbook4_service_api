@@ -178,15 +178,6 @@ interface PurchaseRpcServiceInterface
     public function appointLockJh(int $id, string $o_id): array;
 
     /**
-     * 检查要货单是否完成
-     *
-     * @param int $id
-     *
-     * @return bool
-     */
-    public function checkYhDone(int $id): bool;
-
-    /**
      * 修改优先级别
      *
      * @param string $ids
