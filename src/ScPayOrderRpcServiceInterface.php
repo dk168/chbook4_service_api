@@ -14,13 +14,11 @@ namespace Chbook4\ServiceApi;
 interface ScPayOrderRpcServiceInterface
 {
     /**
-     * 支付成功后回调处理
+     * 支付结果主动查询并处理
      *
-     * @param array $ret_data
-     * @param array $order_info
-     * @param array $client_info
+     * @param string $req_seq
      *
      * @return array
      */
-    public function wxPaySuccess(array $ret_data, array $order_info, array $client_info): array;
+    public function wxPayQuery(string $req_seq): array;
 }
