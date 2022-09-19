@@ -8,7 +8,7 @@ declare(strict_types=1);
  * Time: 16:19
  * Features:
  */
-namespace App\JsonRpc;
+namespace Chbook4\ServiceApi;
 
 /**
  * 盘点
