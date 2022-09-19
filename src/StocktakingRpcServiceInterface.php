@@ -5,10 +5,10 @@ declare(strict_types=1);
  * Created by PhpStorm.
  * User: dk
  * Date: 2022/6/16
- * Time: 18:02
+ * Time: 16:19
  * Features:
  */
-namespace Chbook4\ServiceApi;
+namespace App\JsonRpc;
 
 /**
  * 盘点
@@ -131,6 +131,15 @@ interface StocktakingRpcServiceInterface
      * @return array
      */
     public function getWaitCount(array $params): array;
+
+    /**
+     * 获取盘点详情未审核的数量
+     *
+     * @param string $s_id
+     *
+     * @return array
+     */
+    public function getUnapprovedCount(string $s_id): array;
 
     /**
      * 盘点开始处理
