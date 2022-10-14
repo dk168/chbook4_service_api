@@ -139,14 +139,13 @@ interface BOrderRpcServiceInterface
     /**
      * 获取供应商报订单列表
      *
-     * @param int    $f_id
-     * @param int    $page
-     * @param int    $pageSize
-     * @param string $station_id
+     * @param int $f_id
+     * @param int $page
+     * @param int $pageSize
      *
      * @return array
      */
-    public function getListByF(int $f_id, int $page, int $pageSize, string $station_id): array;
+    public function getListByF(int $f_id, int $page, int $pageSize): array;
 
     /**
      * 获取报订商品列表
