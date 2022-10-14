@@ -145,7 +145,7 @@ interface BOrderRpcServiceInterface
      *
      * @return array
      */
-    public function getListByF(int $f_id, int $page, int $pageSize): array;
+    public function getListByF(int $f_id, int $page = 1, int $pageSize = 500): array;
 
     /**
      * 获取报订商品列表
@@ -156,7 +156,7 @@ interface BOrderRpcServiceInterface
      *
      * @return array
      */
-    public function getDetailByO(int $f_id, int $page, int $pageSize): array;
+    public function getDetailByO(int $f_id, int $page = 1, int $pageSize = 500): array;
 
     /**
      * 修改备注
