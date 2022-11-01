@@ -74,13 +74,14 @@ interface BOrderRpcServiceInterface
     /**
      * 获取列表
      *
-     * @param int $id
-     * @param int $page
-     * @param int $pageSize
+     * @param int  $id
+     * @param int  $page
+     * @param int  $pageSize
+     * @param bool $is_get_img
      *
      * @return array
      */
-    public function getItemList(int $id, int $page = 1, int $pageSize = 500): array;
+    public function getItemList(int $id, int $page = 1, int $pageSize = 500, bool $is_get_img = false): array;
 
     /**
      * 审核

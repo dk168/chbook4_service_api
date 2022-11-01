@@ -186,4 +186,14 @@ interface StocktakingRpcServiceInterface
      * @return array
      */
     public function getHistoryCount(array $params): array;
+
+    /**
+     * 获取指定商品已盘分布
+     *
+     * @param int    $h_id
+     * @param string $s_id
+     *
+     * @return array
+     */
+    public function getGoodsPdInfo(int $h_id, string $s_id): array;
 }
