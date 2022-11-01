@@ -68,15 +68,17 @@ interface ShelfRpcServiceInterface
     /**
      * 获取下架列表详情
      *
-     * @param int    $id
+     * @param mixed  $id
      * @param string $type
      * @param int    $page
      * @param int    $pageSize
      * @param bool   $is_get_img
+     * @param string $s_id
+     * @param int    $jh_type //拣货类型 1最小数量推荐 2最大数量推荐 3架号顺序推荐
      *
      * @return array
      */
-    public function getDownList(int $id, string $type, int $page = 1, int $pageSize = 500, bool $is_get_img = false): array;
+    public function getDownList($id, string $type = '', int $page = 1, int $pageSize = 500, bool $is_get_img = false, string $s_id = '', int $jh_type = 0): array;
 
     /**
      * 下架
