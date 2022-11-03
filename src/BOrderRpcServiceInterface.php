@@ -1,17 +1,20 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: dk
- * Date: 2022/7/5
- * Time: 17:55
+ * Date: 2022/10/13
+ * Time: 16:16
  * Features:
  */
 namespace Chbook4\ServiceApi;
 
+
 /**
- * 要货
+ * 报订单
+ *
  */
-interface PurchaseRpcServiceInterface
+interface BOrderRpcServiceInterface
 {
     /**
      * 获取列表
@@ -108,49 +111,7 @@ interface PurchaseRpcServiceInterface
     public function setReply(int $id): array;
 
     /**
-     * 获取商品要货记录
-     *
-     * @param string $h_ids
-     *
-     * @return array
-     */
-    public function getHistoryCount(string $h_ids): array;
-
-    /**
-     * 要货拣货-拣货详情列表
-     *
-     * @param int    $id
-     * @param string $s_id_out 拣货库房
-     * @param int    $page
-     * @param int    $pageSize
-     *
-     * @return array
-     */
-    public function getJhList(int $id, string $s_id_out, int $page = 1, int $pageSize = 500): array;
-
-    /**
-     * 要货拣货-拣货审核
-     *
-     * @param int    $id       要货ID
-     * @param string $s_id_out 调出库房-正常库房
-     * @param array  $list     id 商品ID,amount 数量，shelf_list[shelf_id、amount]架号下架分布
-     * @param int    $type     1 预留发货；2 直接配送
-     *
-     * @return array
-     */
-    public function setWarehousing(int $id, string $s_id_out, array $list, int $type = 2): array;
-
-    /**
-     * 要货拣货-生成内报
-     *
-     * @param string $ids
-     *
-     * @return array
-     */
-    public function setNB(string $ids): array;
-
-    /**
-     * 要货拣货-关闭拣货
+     * 关闭订单
      *
      * @param int $id
      *
@@ -159,32 +120,51 @@ interface PurchaseRpcServiceInterface
     public function closeJh(int $id): array;
 
     /**
-     * 要货拣货-锁定拣货或取消锁定拣货
+     * 获取报订单内报分发记录
      *
-     * @param int $id
-     * @param int $type 类型 1取消锁定 2锁定
+     * @param int $bd_item_id
      *
      * @return array
      */
-    public function lockJh(int $id, int $type = 1): array;
+    public function getNbHandList(int $bd_item_id): array;
 
     /**
-     * 要货拣货-指定拣货
+     * 获取报订单内报记录
      *
-     * @param int    $id
-     * @param string $o_id
+     * @param int $bd_id
      *
      * @return array
      */
-    public function appointLockJh(int $id, string $o_id): array;
+    public function getNbList(int $bd_id): array;
 
     /**
-     * 修改优先级别
+     * 获取供应商报订单列表
      *
-     * @param string $ids
-     * @param int    $priority_level
+     * @param int $f_id
+     * @param int $page
+     * @param int $pageSize
      *
      * @return array
      */
-    public function editPriorityLevel(string $ids, int $priority_level): array;
+    public function getListByF(int $f_id, int $page = 1, int $pageSize = 500): array;
+
+    /**
+     * 获取报订商品列表
+     *
+     * @param int $f_id
+     * @param int $page
+     * @param int $pageSize
+     *
+     * @return array
+     */
+    public function getDetailByO(int $f_id, int $page = 1, int $pageSize = 500): array;
+
+    /**
+     * 修改备注
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function saveRemark(array $params): array;
 }

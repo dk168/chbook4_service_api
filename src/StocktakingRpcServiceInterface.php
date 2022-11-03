@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Created by PhpStorm.
  * User: dk
  * Date: 2022/6/16
- * Time: 18:02
+ * Time: 16:19
  * Features:
  */
 namespace Chbook4\ServiceApi;
@@ -133,6 +133,15 @@ interface StocktakingRpcServiceInterface
     public function getWaitCount(array $params): array;
 
     /**
+     * 获取盘点详情未审核的数量
+     *
+     * @param string $s_id
+     *
+     * @return array
+     */
+    public function getUnapprovedCount(string $s_id): array;
+
+    /**
      * 盘点开始处理
      *
      * @param string $s_id
@@ -177,4 +186,14 @@ interface StocktakingRpcServiceInterface
      * @return array
      */
     public function getHistoryCount(array $params): array;
+
+    /**
+     * 获取指定商品已盘分布
+     *
+     * @param int    $h_id
+     * @param string $s_id
+     *
+     * @return array
+     */
+    public function getGoodsPdInfo(int $h_id, string $s_id): array;
 }

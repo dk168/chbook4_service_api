@@ -78,10 +78,11 @@ interface WholesaleRpcServiceInterface
      * @param bool  $get_xt_info      是否获取退货的冲减信息
      * @param bool  $is_shelf_scatter 是否查询架位分布
      * @param array $detail           主表信息
+     * @param bool  $is_get_img
      *
      * @return array
      */
-    public function getItemList(int $id, int $page = 1, int $pageSize = 500, bool $get_xt_info = false, array $detail = [], bool $is_shelf_scatter = false): array;
+    public function getItemList(int $id, int $page = 1, int $pageSize = 500, bool $get_xt_info = false, array $detail = [], bool $is_shelf_scatter = false, bool $is_get_img = false): array;
 
     /**
      * 获取商品批销记录统计

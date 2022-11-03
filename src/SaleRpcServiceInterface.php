@@ -59,10 +59,11 @@ interface SaleRpcServiceInterface
      * @param int    $page
      * @param int    $pageSize
      * @param array  $detail
+     * @param bool   $is_get_img
      *
      * @return array
      */
-    public function getItemList(int $id, string $s_id = '', bool $is_shelf_scatter = false, int $page = 1, int $pageSize = 500, array $detail = []): array;
+    public function getItemList(int $id, string $s_id = '', bool $is_shelf_scatter = false, int $page = 1, int $pageSize = 500, array $detail = [], bool $is_get_img = false): array;
 
     /**
      * 销售订单-新增/编辑

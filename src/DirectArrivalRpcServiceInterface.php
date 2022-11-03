@@ -78,10 +78,11 @@ interface DirectArrivalRpcServiceInterface
      * @param int   $pageSize
      * @param bool  $get_jt_info 是否获取退货的冲减信息
      * @param array $detail      主表信息
+     * @param bool  $is_get_img
      *
      * @return array
      */
-    public function getItemList(int $id, int $page = 1, int $pageSize = 500, bool $get_jt_info = false, array $detail = []): array;
+    public function getItemList(int $id, int $page = 1, int $pageSize = 500, bool $get_jt_info = false, array $detail = [], bool $is_get_img = false): array;
 
     /**
      * 审核
