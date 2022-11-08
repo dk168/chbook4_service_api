@@ -359,4 +359,14 @@ interface DirectArrivalRpcServiceInterface
      * @return array
      */
     public function getPackageInfo(int $dh_id, array $package_nos = [], int $type = 1): array;
+
+    /**
+     * 获取退货冲减记录
+     *
+     * @param int  $item_id
+     * @param bool $get_kt 获取可退数量
+     *
+     * @return array
+     */
+    public function getJtInfo(int $item_id, bool $get_kt = false): array;
 }

@@ -269,4 +269,14 @@ interface WholesaleRpcServiceInterface
      * @return array
      */
     public function getAutoXtInfo(array $data, int $c_id, string $station_id, string $order_field = '', string $order_by = ''): array;
+
+    /**
+     * 获取退货冲减记录
+     *
+     * @param int  $item_id
+     * @param bool $get_kt 获取可退数量
+     *
+     * @return array
+     */
+    public function getXtInfo(int $item_id, bool $get_kt = false): array;
 }
