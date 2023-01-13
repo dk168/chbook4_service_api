@@ -236,8 +236,9 @@ interface PolPalRpcServiceInterface
      *
      * @param array  $data
      * @param string $signature
+     * @param bool   $is_verify_sign
      *
      * @return array
      */
-    public function notificationHandle(array $data, string $signature): array;
+    public function notificationHandle(array $data, string $signature, bool $is_verify_sign = true): array;
 }
