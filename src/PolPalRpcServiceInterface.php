@@ -204,6 +204,34 @@ interface PolPalRpcServiceInterface
     public function getStationALL(string $host): array;
 
     /**
+     * 获取银豹访问次数可用的站点
+     *
+     * @param string $host
+     *
+     * @return array
+     */
+    public function getUsableStation(string $host): array;
+
+    /**
+     * 获取接口访问数
+     *
+     * @param string $app_id
+     * @param string $client_host
+     *
+     * @return array
+     */
+    public function getVisitsNumber(string $app_id, string $client_host): array;
+
+    /**
+     * 获取访问总次数
+     *
+     * @param string $client_host
+     *
+     * @return array
+     */
+    public function getVisitsNumberByHost(string $client_host): array;
+
+    /**
      * 通知处理
      *
      * @param array  $data
