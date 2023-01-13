@@ -59,11 +59,11 @@ interface ShelfRpcServiceInterface
      * @param mixed  $id    原单据id或单号
      * @param int    $sj_id 上架单id
      * @param string $type  单据类型
-     * @param array  $list  id 详情ID, h_id 商品ID, shelf_id 架位ID, h_amount 数量
+     * @param string $list  json  id 详情ID, h_id 商品ID, shelf_id 架位ID, h_amount 数量
      *
      * @return array
      */
-    public function setUpShelf($id, int $sj_id, array $list, string $type = ''): array;
+    public function setUpShelf($id, int $sj_id, string $list, string $type = ''): array;
 
     /**
      * 获取下架列表详情
@@ -86,11 +86,11 @@ interface ShelfRpcServiceInterface
      * @param mixed  $id
      * @param int    $xj_id
      * @param string $type
-     * @param array  $list
+     * @param string $list
      *
      * @return array
      */
-    public function setDownShelf($id, int $xj_id, array $list, string $type = ''): array;
+    public function setDownShelf($id, int $xj_id, string $list, string $type = ''): array;
 
     /**
      * 获取商品架号分布列表
