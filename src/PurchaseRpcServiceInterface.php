@@ -187,4 +187,34 @@ interface PurchaseRpcServiceInterface
      * @return array
      */
     public function editPriorityLevel(string $ids, int $priority_level): array;
+
+    /**
+     * 总部审批获取商品列表
+     *
+     * @param int    $id
+     * @param string $station_id_out
+     * @param int    $page
+     * @param int    $pageSize
+     *
+     * @return array
+     */
+    public function getMainVerifyGoodsList(int $id, string $station_id_out, int $page = 1, int $pageSize = 500): array;
+
+    /**
+     * 总部审批
+     *
+     * @param array $each
+     *
+     * @return array
+     */
+    public function mainVerify(array $each): array;
+
+    /**
+     * 完成审批
+     *
+     * @param string $ids
+     *
+     * @return array
+     */
+    public function overMainVerify(string $ids): array;
 }
