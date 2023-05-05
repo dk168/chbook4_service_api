@@ -186,11 +186,11 @@ interface SaleRpcServiceInterface
     /**
      * 关闭拣货
      *
-     * @param int $id
+     * @param string $ids
      *
      * @return array
      */
-    public function closeJh(int $id): array;
+    public function closeJh(string $ids): array;
 
     /**
      * 锁定拣货或取消锁定拣货
@@ -205,12 +205,12 @@ interface SaleRpcServiceInterface
     /**
      * 指定拣货
      *
-     * @param int    $id
+     * @param string $ids
      * @param string $o_id
      *
      * @return array
      */
-    public function appointLockJh(int $id, string $o_id): array;
+    public function appointLockJh(string $ids, string $o_id): array;
 
     /**
      * 销售订单按品种拣货-列表

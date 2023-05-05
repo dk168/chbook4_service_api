@@ -152,11 +152,11 @@ interface PurchaseRpcServiceInterface
     /**
      * 要货拣货-关闭拣货
      *
-     * @param int $id
+     * @param string $ids
      *
      * @return array
      */
-    public function closeJh(int $id): array;
+    public function closeJh(string $ids): array;
 
     /**
      * 要货拣货-锁定拣货或取消锁定拣货
@@ -171,12 +171,12 @@ interface PurchaseRpcServiceInterface
     /**
      * 要货拣货-指定拣货
      *
-     * @param int    $id
+     * @param string $ids
      * @param string $o_id
      *
      * @return array
      */
-    public function appointLockJh(int $id, string $o_id): array;
+    public function appointLockJh(string $ids, string $o_id): array;
 
     /**
      * 修改优先级别

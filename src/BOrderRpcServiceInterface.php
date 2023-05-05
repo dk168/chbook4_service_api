@@ -113,11 +113,11 @@ interface BOrderRpcServiceInterface
     /**
      * 关闭订单
      *
-     * @param int $id
+     * @param string $ids
      *
      * @return array
      */
-    public function closeJh(int $id): array;
+    public function closeJh(string $ids): array;
 
     /**
      * 获取报订单内报分发记录
