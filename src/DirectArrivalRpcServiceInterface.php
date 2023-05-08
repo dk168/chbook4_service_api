@@ -369,4 +369,13 @@ interface DirectArrivalRpcServiceInterface
      * @return array
      */
     public function getJtInfo(int $item_id, bool $get_kt = false): array;
+
+    /**
+     * 对账
+     *
+     * @param array $data
+     *
+     * @return array
+     */
+    public function reconciliation(array $data): array;
 }
