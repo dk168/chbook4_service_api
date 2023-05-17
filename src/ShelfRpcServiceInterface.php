@@ -1,9 +1,10 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: dk
- * Date: 2022/7/5
- * Time: 17:56
+ * Date: 2022/7/1
+ * Time: 14:02
  * Features:
  */
 namespace Chbook4\ServiceApi;
@@ -130,6 +131,16 @@ interface ShelfRpcServiceInterface
      * @return array
      */
     public function adjustAmount(int $h_id, string $shelf_id, int $amount, int $is_add = 1): array;
+
+    /**
+     * 批量架上数量调整-生成调架单
+     *
+     * @param array $data
+     * @param int   $is_add
+     *
+     * @return array
+     */
+    public function batchAdjustAmount(array $data, int $is_add = 1): array;
 
     /**
      * 自动下架对应批销单、调拨单

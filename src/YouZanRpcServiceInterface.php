@@ -1,169 +1,255 @@
 <?php
 
-declare(strict_types=1);
 /**
  * Created by PhpStorm.
  * User: dk
- * Date: 2022/7/1
- * Time: 14:02
+ * Date: 2023/5/10
+ * Time: 13:38
  * Features:
  */
-namespace App\JsonRpc;
+namespace Chbook4\ServiceApi;
 
-/**
- * 单据上下架
- */
-interface ShelfRpcServiceInterface
+
+interface YouZanRpcServiceInterface
 {
     /**
-     * 获取列表
+     * 创建会员卡
      *
      * @param array $params
      *
      * @return array
      */
-    public function getList(array $params): array;
+    public function createMember(array $params): array;
 
     /**
-     * 统计
+     * 会员卡详情
      *
      * @param array $params
      *
      * @return array
      */
-    public function getCount(array $params): array;
+    public function getMemberDetail(array $params): array;
 
     /**
-     * 搜索单据
+     * 获取可用的储值卡
      *
      * @param array $params
      *
      * @return array
      */
-    public function searchBill(array $params): array;
+    public function getMemberCard(array $params): array;
 
     /**
-     * 获取上架列表详情
+     * 获取该商家的会员等级模版列表
      *
-     * @param mixed  $id 单据id或单号
+     * @param array $params
+     *
+     * @return array
+     */
+    public function getLevelList(array $params): array;
+
+    /**
+     * 设置会员等级
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function memberLevelSet(array $params): array;
+
+    /**
+     * 修改会员基本信息
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function updateMemberInfo(array $params): array;
+
+    /**
+     * 给用户加积分
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function memberPointsIncrease(array $params): array;
+
+    /**
+     * 给用户减积分
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function memberPointsDecrease(array $params): array;
+
+    /**
+     * 给用户加成长值
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function memberGrowthIncrease(array $params): array;
+
+    /**
+     * 给用户减成长值
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function memberGrowthDecrease(array $params): array;
+
+    /**
+     * 获取总店站点
+     *
+     * @param string $host
+     *
+     * @return array
+     */
+    public function getMainStation(string $host): array;
+
+    /**
+     * 修改会员余额
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function updateMemberBalance(array $params): array;
+
+    /**
+     * 会员余额充值
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function rechargeMemberBalance(array $params): array;
+
+    /**
+     * 触发会员同步信息投递
+     *
+     * @param string $host
+     * @param int    $m_id
+     *
+     * @return array
+     */
+    public function producer(string $host, int $m_id = 0): array;
+
+    /**
+     * 获取所有已开通有赞的站点
+     *
+     * @param string $host
+     *
+     * @return array
+     */
+    public function getStationALL(string $host): array;
+
+    /**
+     * 获取接口访问数
+     *
+     * @return array
+     */
+    public function getVisitsNumber(): array;
+
+    /**
+     * 解密二维码一维码
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function getOpenIdByCode(array $params): array;
+
+    /**
+     * 商品新增接口
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function goodsAdd(array $params): array;
+
+    /**
+     * 增量更新商品信息接口
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function goodsUpdate(array $params): array;
+
+    /**
+     * 总店修改分店sku信息
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function goodsStockUpdate(array $params): array;
+
+    /**
+     * 根据动态码获取会员ids
+     *
+     * @param      $kdt_id
+     * @param      $code
+     * @param      $is_gift
+     *
+     * @return array
+     */
+    public function getMIdsByCode($kdt_id, $code, $is_gift): array;
+
+    /**
+     * 通知处理
+     *
+     * @param array  $data
+     * @param string $client_id
      * @param string $type
-     * @param int    $page
-     * @param int    $pageSize
-     * @param bool   $is_get_img
+     * @param string $signature
+     * @param bool   $is_verify_sign
      *
      * @return array
      */
-    public function getUpList($id, string $type = '', int $page = 1, int $pageSize = 500, bool $is_get_img = false): array;
+    public function notificationHandle(array $data, string $client_id, string $type, string $signature, bool $is_verify_sign = true): array;
 
     /**
-     * 上架
+     * 获取有赞图片id
      *
-     * @param mixed  $id    原单据id或单号
-     * @param int    $sj_id 上架单id
-     * @param string $type  单据类型
-     * @param string $list  json  id 详情ID, h_id 商品ID, shelf_id 架位ID, h_amount 数量
+     * @param string $img_url
      *
      * @return array
      */
-    public function setUpShelf($id, int $sj_id, string $list, string $type = ''): array;
+    public function getImageId(string $img_url): array;
 
     /**
-     * 获取下架列表详情
-     *
-     * @param mixed  $id
-     * @param string $type
-     * @param int    $page
-     * @param int    $pageSize
-     * @param bool   $is_get_img
-     * @param string $s_id
-     * @param int    $jh_type //拣货类型 1最小数量推荐 2最大数量推荐 3架号顺序推荐
-     *
-     * @return array
-     */
-    public function getDownList($id, string $type = '', int $page = 1, int $pageSize = 500, bool $is_get_img = false, string $s_id = '', int $jh_type = 0): array;
-
-    /**
-     * 下架
-     *
-     * @param mixed  $id
-     * @param int    $xj_id
-     * @param string $type
-     * @param string $list
-     *
-     * @return array
-     */
-    public function setDownShelf($id, int $xj_id, string $list, string $type = ''): array;
-
-    /**
-     * 获取商品架号分布列表
+     * 更新或者新增商品
      *
      * @param array $params
      *
      * @return array
      */
-    public function getGoodsShelfList(array $params): array;
+    public function updateOrInsertGoods(array $params): array;
 
     /**
-     * 获取商品架号分布统计
+     * 更新商品库存
      *
      * @param array $params
      *
      * @return array
      */
-    public function getGoodsShelfCount(array $params): array;
+    public function updateGoodsStock(array $params): array;
 
     /**
-     * 架号流水
+     * 发起商品处理队列请求
      *
-     * @param array $params
+     * @param string $host
+     * @param        $ids
+     * @param string $actionType
      *
      * @return array
      */
-    public function getShelfAmountRunList(array $params): array;
-
-    /**
-     * 架上数量调整
-     *
-     * @param int    $h_id
-     * @param string $shelf_id
-     * @param int    $amount
-     * @param int    $is_add
-     *
-     * @return array
-     */
-    public function adjustAmount(int $h_id, string $shelf_id, int $amount, int $is_add = 1): array;
-
-    /**
-     * 批量架上数量调整-生成调架单
-     *
-     * @param array $data
-     * @param int   $is_add
-     *
-     * @return array
-     */
-    public function batchAdjustAmount(array $data, int $is_add = 1): array;
-
-    /**
-     * 自动下架对应批销单、调拨单
-     *
-     * @param int    $id        单据id
-     * @param int    $type      类型 1收订拣货 2要货拣货 3退货拣货
-     * @param string $bill_type 单据类型PX、PS、TK、DB
-     * @param array  $user_info
-     *
-     * @return array
-     */
-    public function autoDownShelf(int $id, int $type, string $bill_type, array $user_info): array;
-
-    /**
-     * 获取指定商品的架号数量分布
-     *
-     * @param array     $params  查询参数 h_id必传 station_id s_id
-     * @param int|array $type    架位类型 0不限 1正常架 2退货架 3残损架
-     * @param int       $jh_type 架位推荐类型 1最小数量推荐 2最大数量推荐 3架号顺序推荐
-     * @param int       $limit
-     *
-     * @return array
-     */
-    public function getShelfAmountScatter(array $params, $type = 0, int $jh_type = 0, int $limit = 500): array;
+    public function producerGoods(string $host, $ids, string $actionType): array;
 }
