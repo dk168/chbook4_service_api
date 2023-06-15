@@ -165,4 +165,151 @@ interface MessageRpcServiceInterface
      * @return array
      */
     public function smsReport(array $data): array;
+
+    /**
+     * 同步小程序订阅消息
+     *
+     * @param int $client_id
+     *
+     * @return array
+     */
+    public function syncSubscribe(int $client_id): array;
+
+    /**
+     * 同步公众号模板消息
+     *
+     * @param int $client_id
+     *
+     * @return array
+     */
+    public function syncOfficialTemplate(int $client_id): array;
+
+    /**
+     * 获取公众号菜单
+     *
+     * @return array
+     */
+    public function getOfficialMenus(): array;
+
+    /**
+     * 同步公众号菜单
+     *
+     * @param array $data
+     *
+     * @return array
+     */
+    public function syncOfficialMenus(array $data): array;
+
+    /**
+     * 获取公众号配置
+     *
+     * @return array
+     */
+    public function getOfficialConfig(): array;
+
+    /**
+     * 保存公众号配置
+     *
+     * @param array $data
+     *
+     * @return array
+     */
+    public function saveOfficialConfig(array $data): array;
+
+    /**
+     * 获取图文消息列表
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function getNewsList(array $params): array;
+
+    /**
+     * 获取图文消息详情
+     *
+     * @param int $id
+     *
+     * @return array
+     */
+    public function getNewsDetail(int $id): array;
+
+    /**
+     * 新增/编辑图文消息
+     *
+     * @param array $data
+     *
+     * @return array
+     */
+    public function saveNews(array $data): array;
+
+    /**
+     * 删除图文消息
+     *
+     * @param int $id
+     *
+     * @return array
+     */
+    public function delNews(int $id): array;
+
+    /**
+     * 获取回复列表
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function getReplyList(array $params): array;
+
+    /**
+     * 获取回复详情
+     *
+     * @param int    $id
+     * @param string $key
+     *
+     * @return array
+     */
+    public function getReplyDetail(int $id, string $key = ''): array;
+
+    /**
+     * 新增/编辑回复
+     *
+     * @param array $data
+     *
+     * @return array
+     */
+    public function saveReply(array $data): array;
+
+    /**
+     * 删除回复
+     *
+     * @param int $id
+     *
+     * @return array
+     */
+    public function delReply(int $id): array;
+
+    /**
+     * 发送小程序订阅消息
+     *
+     * @param string $type
+     * @param string $template_id
+     * @param string $openid
+     * @param array  $data
+     *
+     * @return array
+     */
+    public function sendSubscribe(string $type, string $template_id, string $openid, array $data): array;
+
+    /**
+     * 发送公众号模板消息
+     *
+     * @param string $type
+     * @param string $template_id
+     * @param string $openid
+     * @param array  $data
+     *
+     * @return array
+     */
+    public function sendOfficialTemplate(string $type, string $template_id, string $openid, array $data): array;
 }
