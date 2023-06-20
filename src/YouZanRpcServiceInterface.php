@@ -183,6 +183,15 @@ interface YouZanRpcServiceInterface
     public function goodsUpdate(array $params): array;
 
     /**
+     * 删除商品
+     *
+     * @param array $h_ids
+     *
+     * @return array
+     */
+    public function deleteGoods(array $h_ids): array;
+
+    /**
      * 总店修改分店sku信息
      *
      * @param array $params
