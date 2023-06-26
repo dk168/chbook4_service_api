@@ -261,4 +261,40 @@ interface YouZanRpcServiceInterface
      * @return array
      */
     public function producerGoods(string $host, $ids, string $actionType): array;
+
+    /**
+     * 根据状态查询用户优惠券/优惠码列表
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function umpVoucherQuery(array $params): array;
+
+    /**
+     * 根据核销码获取优惠券/优惠码
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function umpCouponConsumeGet(array $params): array;
+
+    /**
+     * 核销优惠券/优惠码
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function umpCouponConsumeVerify(array $params): array;
+
+    /**
+     * 线下核销券退还接口
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function umpCouponOfflineverifyRevert(array $params): array;
 }
