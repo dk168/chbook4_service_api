@@ -196,4 +196,13 @@ interface StocktakingRpcServiceInterface
      * @return array
      */
     public function getGoodsPdInfo(int $h_id, string $s_id): array;
+
+    /**
+     * 获取有效的盘点计划
+     *
+     * @param string $s_id
+     *
+     * @return array
+     */
+    public function getValidPdInfo(string $s_id): array;
 }
