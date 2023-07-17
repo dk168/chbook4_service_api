@@ -111,10 +111,11 @@ interface PurchaseRpcServiceInterface
      * 获取商品要货记录
      *
      * @param string $h_ids
+     * @param string $station_id
      *
      * @return array
      */
-    public function getHistoryCount(string $h_ids): array;
+    public function getHistoryCount(string $h_ids, string $station_id): array;
 
     /**
      * 要货拣货-拣货详情列表
