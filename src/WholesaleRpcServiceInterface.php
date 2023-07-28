@@ -234,41 +234,29 @@ interface WholesaleRpcServiceInterface
     /**
      * 获取商品批销记录
      *
-     * @param int    $h_id
-     * @param int    $c_id
-     * @param string $station_id
-     * @param string $order_field
-     * @param string $order_by
+     * @param array $params
      *
      * @return array
      */
-    public function getGoodsBuyInfo(int $h_id, int $c_id, string $station_id, string $order_field = '', string $order_by = ''): array;
+    public function getGoodsBuyInfo(array $params): array;
 
     /**
      * 获取商品批销可退数量
      *
-     * @param string $h_ids
-     * @param int    $c_id
-     * @param string $station_id
-     * @param string $order_field
-     * @param string $order_by
+     * @param array $params
      *
      * @return array
      */
-    public function getGoodsPxKtAmount(string $h_ids, int $c_id, string $station_id, string $order_field = '', string $order_by = ''): array;
+    public function getGoodsPxKtAmount(array $params): array;
 
     /**
      * 获取自动冲减信息
      *
-     * @param array  $data
-     * @param int    $c_id
-     * @param string $station_id
-     * @param string $order_field
-     * @param string $order_by
+     * @param array $params
      *
      * @return array
      */
-    public function getAutoXtInfo(array $data, int $c_id, string $station_id, string $order_field = '', string $order_by = ''): array;
+    public function getAutoXtInfo(array $params): array;
 
     /**
      * 获取退货冲减记录
