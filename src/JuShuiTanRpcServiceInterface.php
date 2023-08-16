@@ -50,4 +50,13 @@ interface JuShuiTanRpcServiceInterface
      * @return array
      */
     public function deleteGoods(array $h_ids): array;
+
+    /**
+     * 通知处理
+     *
+     * @param array $data
+     *
+     * @return array
+     */
+    public function notificationHandle(array $data): array;
 }
