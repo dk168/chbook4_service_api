@@ -59,4 +59,13 @@ interface JuShuiTanRpcServiceInterface
      * @return array
      */
     public function notificationHandle(array $data): array;
+
+    /**
+     * 设置access_token
+     *
+     * @param string $host
+     *
+     * @return array
+     */
+    public function setAccessToken(string $host): array;
 }
