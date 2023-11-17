@@ -21,4 +21,34 @@ interface ScPayOrderRpcServiceInterface
      * @return array
      */
     public function wxPayQuery(string $req_seq): array;
+
+    /**
+     * 是否已开通微信发货信息管理
+     *
+     * @return bool
+     */
+    public function isWxDeliver(): bool;
+
+    /**
+     * 微信发货信息管理录入
+     *
+     * @param string $order_sn
+     * @param int    $logistics_type
+     * @param string $item_desc
+     * @param string $openid
+     * @param string $tracking_no
+     * @param string $express_company
+     *
+     * @return array
+     */
+    public function wxOrderDeliver(string $order_sn, int $logistics_type, string $item_desc, string $openid, string $tracking_no = "", string $express_company = ""): array;
+
+    /**
+     * 微信
+     *
+     * @param string $transaction_id
+     *
+     * @return bool
+     */
+    public function wxOrderIsComplete(string $transaction_id): bool;
 }
