@@ -62,7 +62,7 @@ interface ZxtClientProductOrderRpcServiceInterface
     public function orderPay(array $params): array;
 
     /**
-     * 取消订单
+     * 订单支付结果查询
      *
      * @param array $params
      *
@@ -80,12 +80,11 @@ interface ZxtClientProductOrderRpcServiceInterface
     public function cancelOrder(array $params): array;
 
     /**
-     * 获取订单列表
+     * 订单列表
      *
      * @param array $params
      *
      * @return array
      */
     public function getOrderList(array $params): array;
-
 }
