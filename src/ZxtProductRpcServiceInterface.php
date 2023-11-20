@@ -32,4 +32,13 @@ interface ZxtProductRpcServiceInterface
      */
     public function getProductDetail(array $params): array;
 
+    /**
+     * 获取产品开通客户列表
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function getProductClientList(array $params): array;
+
 }
