@@ -34,4 +34,13 @@ interface ZxtClientRpcServiceInterface
      */
     public function getClientMenu(array $params): array;
 
+    /**
+     * 获取客户其它权限列表
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function getClientJurisdiction(array $params): array;
+
 }
