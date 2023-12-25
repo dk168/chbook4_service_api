@@ -3,14 +3,14 @@
     "description": "A base server library for chbook4.",
     "license": "MIT",
     "require": {
-        "php": ">=7.2",
-        "hyperf/json-rpc": "~2.2.0",
-        "hyperf/rpc-client": "~2.2.0",
-        "hyperf/config-center": "^2.2",
-        "hyperf/config-nacos": "^2.2",
+        "php": ">=8.1",
+        "hyperf/json-rpc": "~3.1.0",
+        "hyperf/rpc-client": "~3.1.0",
+        "hyperf/config-center": "^3.1",
+        "hyperf/config-nacos": "^3.1",
         "hyperf/service-governance-nacos": "v2.2.31.1",
-        "hyperf/service-governance": "~2.2.0",
-        "hyperf/rpc-multiplex": "^2.2"
+        "hyperf/service-governance": "~3.1.0",
+        "hyperf/rpc-multiplex": "^3.1"
     },
     "authors": [
         {
