@@ -115,6 +115,15 @@ interface StocktakingRpcServiceInterface
     public function cancelItemAudit(string $ids = ''): array;
 
     /**
+     * 修改架位
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function editShelf(array $params): array;
+
+    /**
      * 盘点处理-列表
      *
      * @param array $params
