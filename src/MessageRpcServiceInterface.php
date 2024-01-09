@@ -106,6 +106,17 @@ interface MessageRpcServiceInterface
     public function notice(int $client_id, string $type, array $params): array;
 
     /**
+     * 消息推送处理
+     *
+     * @param int    $client_id
+     * @param string $type
+     * @param array  $params
+     *
+     * @return array
+     */
+    public function noticeHandle(int $client_id, string $type, array $params): array;
+
+    /**
      * 发送模板短信
      *
      * @param int    $client_id
