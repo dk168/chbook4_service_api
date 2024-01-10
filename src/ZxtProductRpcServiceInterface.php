@@ -17,6 +17,13 @@ namespace Chbook4\ServiceApi;
 interface ZxtProductRpcServiceInterface
 {
     /**
+     * 所有产品列表
+     *
+     * @return array
+     */
+    public function getAllProductList(): array;
+
+    /**
      * 应用市场产品列表
      *
      * @return array
