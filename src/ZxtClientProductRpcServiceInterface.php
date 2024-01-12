@@ -49,4 +49,13 @@ interface ZxtClientProductRpcServiceInterface
      * @return array
      */
     public function getProductCount(array $params): array;
+
+    /**
+     * 创建客户产品
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function createClientProducts(array $params): array;
 }
