@@ -58,4 +58,13 @@ interface ZxtClientProductRpcServiceInterface
      * @return array
      */
     public function createClientProducts(array $params): array;
+
+    /**
+     * 客户已付款
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function clientIsPay(array $params): array;
 }
