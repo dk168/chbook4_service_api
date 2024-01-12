@@ -96,4 +96,13 @@ interface ZxtClientProductOrderRpcServiceInterface
      * @return array
      */
     public function getOrderDetail(array $params): array;
+
+    /**
+     * 订单统计
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function getOrderCount(array $params): array;
 }
