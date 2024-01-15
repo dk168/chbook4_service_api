@@ -160,6 +160,16 @@ interface MessageRpcServiceInterface
     public function getSmsPlanList(int $client_id, array $data): array;
 
     /**
+     * 获取短信群发日志
+     *
+     * @param int   $client_id
+     * @param array $data
+     *
+     * @return array
+     */
+    public function getSmsPlanLog(int $client_id, array $data): array;
+
+    /**
      * 短信审核处理
      *
      * @param array $data
